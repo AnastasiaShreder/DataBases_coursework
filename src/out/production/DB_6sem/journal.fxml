@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="484.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.JournalController">
+   <children>
+      <TableView fx:id="wrh1_table" layoutX="36.0" layoutY="198.0" prefHeight="246.0" prefWidth="240.0">
+        <columns>
+          <TableColumn fx:id="good_name_col_1" prefWidth="139.0" text="Наименование" />
+          <TableColumn fx:id="good_count_col_1" prefWidth="100.0" text="Кол-во" />
+        </columns>
+      </TableView>
+      <TableView fx:id="wrh2_table" layoutX="316.0" layoutY="198.0" prefHeight="246.0" prefWidth="248.0">
+        <columns>
+          <TableColumn fx:id="good_name_col_2" prefWidth="145.0" text="Наименование" />
+          <TableColumn fx:id="good_count_col_2" prefWidth="101.0" text="Кол-во" />
+        </columns>
+      </TableView>
+      <Label layoutX="13.0" layoutY="10.0" text="Главное меню">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="129.0" layoutY="168.0" text="Склад 1">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Label>
+      <Label layoutX="418.0" layoutY="168.0" text="Склад 2">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Label>
+      <Button layoutX="241.0" layoutY="37.0" mnemonicParsing="false" onAction="#openGoodsWindow" text="Работа с товарами" />
+      <Button layoutX="241.0" layoutY="99.0" mnemonicParsing="false" onAction="#openAnalyticsWindow" prefHeight="25.0" prefWidth="119.0" text="Аналитика" />
+      <Separator layoutX="20.0" layoutY="135.0" prefHeight="7.0" prefWidth="560.0" />
+      <Label layoutX="14.0" layoutY="142.0" text="Журнал">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button layoutX="240.0" layoutY="68.0" mnemonicParsing="false" onAction="#openReqsWindow" text="Работа с заявками " />
+   </children>
+</AnchorPane>

@@ -1,0 +1,169 @@
+--------------------------------------------------------
+--  File created - пятница-февраля-12-2021   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table GOODS
+--------------------------------------------------------
+
+  CREATE TABLE "C##TEST"."GOODS" 
+   (	"ID" NUMBER(*,0), 
+	"NAME" VARCHAR2(40 BYTE), 
+	"PRIORITY" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SALES
+--------------------------------------------------------
+
+  CREATE TABLE "C##TEST"."SALES" 
+   (	"ID" NUMBER(*,0), 
+	"GOOD_ID" NUMBER(*,0), 
+	"GOOD_COUNT" NUMBER(*,0), 
+	"CREATE_DATE" DATE
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table WAREHOUSE1
+--------------------------------------------------------
+
+  CREATE TABLE "C##TEST"."WAREHOUSE1" 
+   (	"ID" NUMBER(*,0), 
+	"GOOD_ID" NUMBER(*,0), 
+	"GOOD_COUNT" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table WAREHOUSE2
+--------------------------------------------------------
+
+  CREATE TABLE "C##TEST"."WAREHOUSE2" 
+   (	"ID" NUMBER(*,0), 
+	"GOOD_ID" NUMBER(*,0), 
+	"GOOD_COUNT" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+REM INSERTING into C##TEST.GOODS
+SET DEFINE OFF;
+REM INSERTING into C##TEST.SALES
+SET DEFINE OFF;
+REM INSERTING into C##TEST.WAREHOUSE1
+SET DEFINE OFF;
+REM INSERTING into C##TEST.WAREHOUSE2
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index GOODS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TEST"."GOODS_PK" ON "C##TEST"."GOODS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SALES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TEST"."SALES_PK" ON "C##TEST"."SALES" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index WAREHOUSE1_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TEST"."WAREHOUSE1_PK" ON "C##TEST"."WAREHOUSE1" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index WAREHOUSE2_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TEST"."WAREHOUSE2_PK" ON "C##TEST"."WAREHOUSE2" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index GOODS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TEST"."GOODS_PK" ON "C##TEST"."GOODS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SALES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TEST"."SALES_PK" ON "C##TEST"."SALES" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index WAREHOUSE1_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TEST"."WAREHOUSE1_PK" ON "C##TEST"."WAREHOUSE1" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index WAREHOUSE2_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TEST"."WAREHOUSE2_PK" ON "C##TEST"."WAREHOUSE2" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table GOODS
+--------------------------------------------------------
+
+  ALTER TABLE "C##TEST"."GOODS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TEST"."GOODS" ADD CONSTRAINT "GOODS_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SALES
+--------------------------------------------------------
+
+  ALTER TABLE "C##TEST"."SALES" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TEST"."SALES" MODIFY ("GOOD_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TEST"."SALES" ADD CONSTRAINT "SALES_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table WAREHOUSE1
+--------------------------------------------------------
+
+  ALTER TABLE "C##TEST"."WAREHOUSE1" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TEST"."WAREHOUSE1" MODIFY ("GOOD_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TEST"."WAREHOUSE1" ADD CONSTRAINT "WAREHOUSE1_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table WAREHOUSE2
+--------------------------------------------------------
+
+  ALTER TABLE "C##TEST"."WAREHOUSE2" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TEST"."WAREHOUSE2" MODIFY ("GOOD_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TEST"."WAREHOUSE2" ADD CONSTRAINT "WAREHOUSE2_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SALES
+--------------------------------------------------------
+
+  ALTER TABLE "C##TEST"."SALES" ADD CONSTRAINT "SALES_FK1" FOREIGN KEY ("GOOD_ID")
+	  REFERENCES "C##TEST"."GOODS" ("ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table WAREHOUSE1
+--------------------------------------------------------
+
+  ALTER TABLE "C##TEST"."WAREHOUSE1" ADD CONSTRAINT "WAREHOUSE1_FK1" FOREIGN KEY ("GOOD_ID")
+	  REFERENCES "C##TEST"."GOODS" ("ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table WAREHOUSE2
+--------------------------------------------------------
+
+  ALTER TABLE "C##TEST"."WAREHOUSE2" ADD CONSTRAINT "WAREHOUSE2_FK1" FOREIGN KEY ("GOOD_ID")
+	  REFERENCES "C##TEST"."GOODS" ("ID") ON DELETE CASCADE ENABLE;

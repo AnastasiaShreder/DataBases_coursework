@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="524.0" prefWidth="679.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RequestsController">
+   <children>
+      <Pane layoutX="35.0" layoutY="41.0" prefHeight="143.0" prefWidth="201.0" style="-fx-background-color: #E0FFFF;">
+         <children>
+            <Button fx:id="add_btn" layoutX="121.0" layoutY="110.0" mnemonicParsing="false" onAction="#addReq" text="Добавить" />
+            <Label layoutX="19.0" layoutY="23.0" text="Товар:" />
+            <TextField fx:id="new_req_cnt" layoutX="146.0" layoutY="49.0" prefHeight="25.0" prefWidth="42.0" />
+            <Label layoutX="19.0" layoutY="53.0" text="Количество" />
+            <ComboBox fx:id="new_req_cb" layoutX="79.0" layoutY="19.0" prefHeight="25.0" prefWidth="108.0" />
+            <Label layoutX="21.0" layoutY="82.0" text="Дата" />
+            <DatePicker fx:id="date_new_req" layoutX="81.0" layoutY="79.0" prefHeight="17.0" prefWidth="108.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="241.0" layoutY="41.0" prefHeight="143.0" prefWidth="201.0" style="-fx-background-color: #E0FFFF;">
+         <children>
+            <Button fx:id="change_btn" layoutX="116.0" layoutY="111.0" mnemonicParsing="false" onAction="#modifyReq" text="Изменить" />
+            <Label layoutX="17.0" layoutY="24.0" text="Номер заявки" />
+            <Label layoutX="18.0" layoutY="56.0" text="Новые данные:" />
+            <Separator layoutX="1.0" layoutY="51.0" prefHeight="3.0" prefWidth="200.0" />
+            <TextField fx:id="modify_req_cnt" layoutX="134.0" layoutY="79.0" prefHeight="25.0" prefWidth="53.0" promptText="Кол-во" />
+            <ComboBox fx:id="modify_req_cb" layoutX="110.0" layoutY="20.0" prefHeight="25.0" prefWidth="76.0" />
+            <ComboBox fx:id="modify_req_good_cb" layoutX="18.0" layoutY="79.0" prefHeight="25.0" prefWidth="98.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="447.0" layoutY="41.0" prefHeight="143.0" prefWidth="200.0" style="-fx-background-color: #E0FFFF;">
+         <children>
+            <Button fx:id="delete_btn" layoutX="127.0" layoutY="110.0" mnemonicParsing="false" onAction="#deleteReq" text="Удалить" />
+            <Label layoutX="35.0" layoutY="26.0" text="Номер заявки" />
+            <ComboBox fx:id="delete_req_cb" layoutX="123.0" layoutY="22.0" prefHeight="25.0" prefWidth="64.0" />
+         </children>
+      </Pane>
+      <TableView fx:id="table_reqs" layoutX="101.0" layoutY="201.0" prefHeight="290.0" prefWidth="482.0">
+        <columns>
+          <TableColumn fx:id="num_req_col" prefWidth="93.0" text="Номер заявки" />
+          <TableColumn fx:id="good_name_col" prefWidth="143.0" text="Наименование товара" />
+            <TableColumn fx:id="good_count_col" prefWidth="100.0" text="Кол-во товара" />
+            <TableColumn fx:id="create_date_col" prefWidth="147.0" text="Дата создания" />
+        </columns>
+      </TableView>
+      <Label layoutX="97.0" layoutY="14.0" text="Новая заявка:" />
+      <Label layoutX="291.0" layoutY="14.0" text="Изменение заявки" />
+      <Label layoutX="500.0" layoutY="14.0" text="Удвление заявки" />
+   </children>
+</AnchorPane>

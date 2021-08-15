@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="524.0" prefWidth="679.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GoodsController">
+   <children>
+      <Pane layoutX="35.0" layoutY="41.0" prefHeight="143.0" prefWidth="201.0" style="-fx-background-color: #E0FFFF;">
+         <children>
+            <Button fx:id="add_btn" layoutX="119.0" layoutY="110.0" mnemonicParsing="false" onAction="#addGood" text="Добавить" />
+            <TextField fx:id="new_good" layoutX="105.0" layoutY="22.0" prefHeight="25.0" prefWidth="82.0" />
+            <Label layoutX="20.0" layoutY="26.0" text="Новый товар:" />
+            <Label layoutX="32.0" layoutY="57.0" text="Приоритет:" />
+            <ComboBox fx:id="priority_cb1" layoutX="104.0" layoutY="53.0" prefHeight="25.0" prefWidth="84.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="241.0" layoutY="41.0" prefHeight="143.0" prefWidth="201.0" style="-fx-background-color: #E0FFFF;">
+         <children>
+            <Button fx:id="change_btn" layoutX="116.0" layoutY="111.0" mnemonicParsing="false" onAction="#modifyGood" text="Изменить" />
+            <TextField fx:id="new_good_change" layoutX="16.0" layoutY="79.0" prefHeight="25.0" prefWidth="95.0" promptText="Товар" />
+            <Label layoutX="17.0" layoutY="24.0" text="Товар:" />
+            <Label layoutX="18.0" layoutY="56.0" text="Новые данные:" />
+            <Separator layoutX="1.0" layoutY="51.0" prefHeight="3.0" prefWidth="200.0" />
+            <ComboBox fx:id="old_good_cb" layoutX="66.0" layoutY="20.0" prefHeight="25.0" prefWidth="120.0" />
+            <ComboBox fx:id="priority_cb2" layoutX="116.0" layoutY="79.0" prefHeight="25.0" prefWidth="70.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="447.0" layoutY="41.0" prefHeight="143.0" prefWidth="200.0" style="-fx-background-color: #E0FFFF;">
+         <children>
+            <Button fx:id="delete_btn" layoutX="124.0" layoutY="110.0" mnemonicParsing="false" onAction="#deleteGood" text="Удалить" />
+            <Label layoutX="28.0" layoutY="26.0" text="Товар" />
+            <ComboBox fx:id="delete_good_cb" layoutX="88.0" layoutY="22.0" prefHeight="25.0" prefWidth="95.0" />
+         </children>
+      </Pane>
+      <TableView fx:id="table_goods" layoutX="172.0" layoutY="210.0" prefHeight="290.0" prefWidth="339.0">
+        <columns>
+          <TableColumn fx:id="good_name_col" prefWidth="131.0" text="Наименование" />
+          <TableColumn fx:id="good_priority_col" prefWidth="97.0" text="Приоритет" />
+            <TableColumn fx:id="good_count_col" prefWidth="110.0" text="Количество" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="579.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AnalyticsController">
+   <children>
+      <TableView fx:id="analyt_table" layoutX="27.0" layoutY="225.0" prefHeight="195.0" prefWidth="245.0">
+        <columns>
+          <TableColumn fx:id="demand_col" prefWidth="83.0" text="Спрос" />
+            <TableColumn fx:id="count_goods_col" prefWidth="69.0" text="Кол-во" />
+            <TableColumn fx:id="date_col" prefWidth="93.0" text="Дата" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="date_b" layoutX="26.0" layoutY="109.0" prefHeight="34.0" prefWidth="137.0" promptText="Начало" />
+      <DatePicker fx:id="date_e" layoutX="26.0" layoutY="152.0" prefHeight="34.0" prefWidth="137.0" promptText="Конец" />
+      <Button layoutX="366.0" layoutY="69.0" mnemonicParsing="false" onAction="#showPopularGoods" prefHeight="34.0" prefWidth="137.0" text="Популярные товары" />
+      <Label layoutX="26.0" layoutY="1.0" prefHeight="52.0" prefWidth="161.0" text="Аналитика товара:" textAlignment="RIGHT" wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <ComboBox fx:id="goods_cb" layoutX="26.0" layoutY="68.0" prefHeight="34.0" prefWidth="137.0" promptText="Выберите товар" />
+      <Button fx:id="get_report_btn" layoutX="366.0" layoutY="119.0" mnemonicParsing="false" onAction="#getReport" prefHeight="34.0" prefWidth="137.0" text="Сформировать отчет" />
+      <Button layoutX="175.0" layoutY="109.0" mnemonicParsing="false" onAction="#showGoodAnalytics" prefHeight="34.0" prefWidth="82.0" text="Показать" />
+      <Label fx:id="good_name" layoutX="181.0" layoutY="15.0" prefHeight="25.0" prefWidth="330.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <LineChart fx:id="chart" axisSortingPolicy="NONE" layoutX="282.0" layoutY="213.0" prefHeight="220.0" prefWidth="305.0">
+        <xAxis>
+          <CategoryAxis fx:id="axis_dates" prefHeight="24.0" prefWidth="248.0" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="230.0" prefWidth="279.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PopularGoodsController">
+   <children>
+      <Label layoutX="29.0" layoutY="20.0" text="Самые популярные товары">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <ListView fx:id="popular_list" layoutX="18.0" layoutY="67.0" prefHeight="140.0" prefWidth="250.0" style="-fx-background-color: #ADD8E6;" />
+   </children>
+</AnchorPane>
